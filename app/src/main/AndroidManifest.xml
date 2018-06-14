@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <application
+        android:name=".BaseApplicatiom"
+        android:allowBackup="true"
+
+        android:icon="@mipmap/icon"
+        android:label="音乐播放器"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".MusiclistActivity$MsgReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
+            android:name=".MusiclistActivity$MusicReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MusiclistActivity" />
+        <activity android:name=".PlayerActivity" />
+
+        <service
+            android:name=".FxService"
+            android:enabled="true"
+            android:label="FxService">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:label=".MyService" />
+        <!--
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        -->
+        <meta-data
+            android:name="QBSDKAppKey"
+            android:value="PpeRpHjyzL5vTlc9LuNrRmHM" />
+        <activity android:name=".WebViewActivity"></activity>
+    </application>
+
+</manifest>

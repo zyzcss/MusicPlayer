@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="#fff"
+            android:text="删除"
+            android:onClick="delSong"
+            android:textAlignment="center"
+            android:textColor="#444"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="#fff"
+            android:text="取消"
+            android:onClick="cancelDialog"
+            android:textAlignment="center"
+            android:textColor="#444"/>
+    </LinearLayout>
+</LinearLayout>

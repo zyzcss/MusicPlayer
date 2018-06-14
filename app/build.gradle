@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
+    defaultConfig {
+        applicationId "com.example.administrator.myapplication"
+        minSdkVersion 24
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://maven.google.com" }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.7'
+    compile 'com.android.support:appcompat-v7:27.+'
+    compile 'com.android.support:support-v4:27.0.0'
+    compile 'id.zelory:compressor:2.1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile files('E:/MyApplication/libs/tbs_sdk_thirdapp_v3.6.0.1249_43610_sharewithdownload_withoutGame_obfs_20180608_114954.jar')
+    compile 'com.android.support:multidex:1.0.1'
+}
